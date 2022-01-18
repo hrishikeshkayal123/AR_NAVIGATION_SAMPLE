@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My AR</string>
+    <string name="web_oauth_client_id">991817998864-l7m6gsn5ed1i2t1sv9nkjunh5rqcp6o7.apps.googleusercontent.com</string>
+    <string name="welcome_to_my_ar_space">Welcome to My AR Space</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="explore_ar">Explore AR</string>
+</resources>
