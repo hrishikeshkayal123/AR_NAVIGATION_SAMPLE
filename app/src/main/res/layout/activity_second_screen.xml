@@ -17,6 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@id/btnSignOut"
+        app:layout_constraintEnd_toEndOf="@id/btnSignOut"
+        app:layout_constraintBottom_toBottomOf="@id/btnSignOut"
+        app:layout_constraintTop_toTopOf="@id/btnSignOut"
+        android:indeterminate="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignOut"
         style="?attr/materialButtonOutlinedStyle"

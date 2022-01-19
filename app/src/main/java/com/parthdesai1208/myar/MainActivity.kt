@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -25,11 +26,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.progressBar.visibility = View.VISIBLE
+        binding.btnSignIn.visibility = View.GONE
+
         auth = Firebase.auth
         auth.addAuthStateListener {
             it.currentUser?.let {
                 startSecondActivity()
+                binding.progressBar.visibility = View.GONE
             }?: kotlin.run {
+                binding.progressBar.visibility = View.GONE
+                binding.btnSignIn.visibility = View.VISIBLE
                 val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestIdToken(getString(R.string.web_oauth_client_id))
                     .requestEmail()
@@ -64,7 +71,6 @@ class MainActivity : AppCompatActivity() {
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
-                            AppPref.UserTokenId  = auth.currentUser?.email.toString()
                             //startSecondActivity()
                         } else {
                             Log.e("error","something went wrong")
