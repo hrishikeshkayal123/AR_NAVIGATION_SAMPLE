@@ -35,6 +35,8 @@ class SecondScreen : AppCompatActivity() {
                 if (!CameraPermissionHelper.hasCameraPermission(this)) {
                     CameraPermissionHelper.requestCameraPermission(this)
                     return@setOnClickListener
+                }else{
+                    startActivity(Intent(this,ARActivity::class.java))
                 }
             }else{
                 Snackbar.make(binding.root, "The device is unsupported", Snackbar.LENGTH_LONG).show()

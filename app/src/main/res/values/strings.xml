@@ -4,4 +4,6 @@
     <string name="welcome_to_my_ar_space">Welcome to My AR Space</string>
     <string name="sign_out">Sign Out</string>
     <string name="explore_ar">Explore AR</string>
+    <string name="add_sphere">Add Sphere</string>
+    <string name="add_box">Add Box</string>
 </resources>
