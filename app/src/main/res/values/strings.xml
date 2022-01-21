@@ -6,4 +6,8 @@
     <string name="explore_ar">Explore AR</string>
     <string name="add_sphere">Add Sphere</string>
     <string name="add_box">Add Box</string>
+    <string name="rotate_x">Rotate X</string>
+    <string name="rotate_y">Rotate Y</string>
+    <string name="rotate_z">Rotate Z</string>
+    <string name="bounce">Bounce</string>
 </resources>

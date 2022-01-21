@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.PermissionChecker
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.snackbar.Snackbar
 import com.google.ar.core.ArCoreApk
 import com.google.firebase.auth.ktx.auth
@@ -27,6 +30,12 @@ class SecondScreen : AppCompatActivity() {
             binding.progressBar.visibility = View.VISIBLE
             binding.btnSignOut.isEnabled = false
             Firebase.auth.signOut()
+
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.web_oauth_client_id))
+                .requestEmail()
+                .build()
+            GoogleSignIn.getClient(this, gso).signOut()
         }
 
         binding.btnExploreAR.setOnClickListener {
