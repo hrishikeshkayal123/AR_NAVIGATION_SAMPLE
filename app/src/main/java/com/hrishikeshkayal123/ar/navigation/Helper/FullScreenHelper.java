@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.parthdesai1208.myar.Helper;
+package com.hrishikeshkayal123.ar.navigation.Helper;
 
 import android.app.Activity;
 import android.view.View;
